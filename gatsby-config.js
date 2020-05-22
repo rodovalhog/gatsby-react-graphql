@@ -1,17 +1,31 @@
 module.exports = {
   siteMetadata: {
     title: `My blog`,
-    position: `Desenvolvedor Front-End JS React`,
-    description: `descrição do meu trabalho colocar depois.`,
+    position: `Desenvolvedor Front-End`,
+    description: `JavaScript, Node, React, React-native, Angular, Jquery, Gatsby, Graphql, HTML, CSS, Styled-Components, Web Components`,
     author: `Guilherme Rodovalho`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `post`,
+        path: `${__dirname}/post`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [],
       },
     },
     `gatsby-transformer-sharp`,
